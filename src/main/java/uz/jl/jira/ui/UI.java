@@ -35,10 +35,11 @@ public class UI {
 
     private static void userList() {
         ResponseEntity<Data<List<UserVO>>> responseData = userService.findAll(new UserCriteria());
-        if (responseData.isSuccess()) {
+        Data<List<UserVO>> data = responseData.getData();
+        if (data.isSuccess()) {
             Writer.println(responseData.getData(), Color.GREEN);
         } else {
-            Writer.println(responseData.getError(), Color.RED);
+            Writer.println(data.getError(), Color.RED);
         }
     }
 
@@ -48,10 +49,10 @@ public class UI {
         builder.password(Reader.readLine("Password : "));
         UserCreateVO userCreateVO = builder.build();
         ResponseEntity<Data<Long>> responseData = userService.create(userCreateVO);
-        if (responseData.isSuccess()) {
+        if (responseData.getData().isSuccess()) {
             Writer.println(responseData.getData(), Color.GREEN);
         } else {
-            Writer.println(responseData.getError(), Color.RED);
+            Writer.println(responseData.getData().getError(), Color.RED);
         }
     }
 }

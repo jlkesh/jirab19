@@ -13,17 +13,23 @@ import lombok.ToString;
 @ToString
 public class Data<T> {
     private T body;
+    private ErrorVO error;
     private Integer total;
+
+    private boolean success;
 
 
     public Data(T body) {
         this.body = body;
     }
 
-    public Data(ErrorVO)
-
     public Data(T body, Integer total) {
         this.body = body;
         this.total = total;
+    }
+
+    public Data(ErrorVO error) {
+        this.error = error;
+        this.success = false;
     }
 }

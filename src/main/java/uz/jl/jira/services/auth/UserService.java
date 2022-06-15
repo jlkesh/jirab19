@@ -39,11 +39,15 @@ public class UserService extends AbstractRepository<UserRepository, BaseMapper> 
         if (userOptional.isPresent()) {
             return new ResponseEntity<>(new Data<>(ErrorVO
                     .builder()
+                    .friendlyMessage("User Name '%s already taken".formatted(dto.getUserName()))
+                    .status(400)
                     .build()));
         }
+
         user.setUserName(dto.getUserName());
         user.setPassword(dto.getPassword());
         repository.create(user);
+
         return new ResponseEntity<>(new Data<>(user.getId()));
     }
 
