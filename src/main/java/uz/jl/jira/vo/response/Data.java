@@ -1,6 +1,7 @@
 package uz.jl.jira.vo.response;
 
 import lombok.Getter;
+import lombok.ToString;
 
 /**
  * @author "Elmurodov Javohir"
@@ -9,6 +10,7 @@ import lombok.Getter;
  */
 
 @Getter
+@ToString
 public class Data<T> {
     private T body;
     private Integer total;
@@ -17,6 +19,8 @@ public class Data<T> {
     public Data(T body) {
         this.body = body;
     }
+
+    public Data(ErrorVO)
 
     public Data(T body, Integer total) {
         this.body = body;

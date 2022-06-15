@@ -1,4 +1,4 @@
-package uz.jl.jira.services.auth;
+package uz.jl.jira.vo.auth;
 
 import uz.jl.jira.vo.GenericVO;
 
@@ -7,5 +7,5 @@ import uz.jl.jira.vo.GenericVO;
  * @since 14/06/22/15:41 (Tuesday)
  * jira/IntelliJ IDEA
  */
-public class UserVO extends GenericVO {
+public class UserUpdateVO extends GenericVO {
 }

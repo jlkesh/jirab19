@@ -1,7 +1,10 @@
 package uz.jl.jira.vo.response;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.sql.Timestamp;
 
 /**
  * @author "Elmurodov Javohir"
@@ -11,6 +14,10 @@ import lombok.Setter;
 
 @Setter
 @Getter
+@Builder
 public class ErrorVO {
-
+    private String friendlyMessage;
+    private String developerMessage;
+    private Integer status;
+    private Timestamp timestamp;
 }

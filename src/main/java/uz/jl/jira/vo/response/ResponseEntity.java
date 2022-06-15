@@ -16,17 +16,11 @@ import uz.jl.jira.vo.response.Data;
 @ToString
 public class ResponseEntity<T> {
     private T data;
-    private ErrorVO error;
     private boolean success;
 
 
     public ResponseEntity(T data) {
         this.data = data;
         this.success = true;
-    }
-
-    public ResponseEntity(ErrorVO error) {
-        this.error = error;
-        this.success = false;
     }
 }
